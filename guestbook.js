@@ -7,7 +7,7 @@ const guestbook = {
   get() {
     return $.ajax({
       type: 'GET',
-      url: `${apiUrl}/entries`,
+      url: `https://us-south.functions.appdomain.cloud/api/v1/web/a41fcf9a-ecfe-43cc-b43d-f762359f0aaf/guestbook/read-guestbook-entry-sequence/entries`,
       dataType: 'json'
     });
   },
@@ -16,7 +16,7 @@ const guestbook = {
     console.log('Sending', name, email, comment)
     return $.ajax({
       type: 'PUT',
-      url: `${apiUrl}/entries`,
+      url: `https://us-south.functions.appdomain.cloud/api/v1/web/a41fcf9a-ecfe-43cc-b43d-f762359f0aaf/guestbook/save-guestbook-entry-sequence/entries`,
       contentType: 'application/json; charset=utf-8',
       data: JSON.stringify({
         name,
